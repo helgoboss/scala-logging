@@ -24,12 +24,14 @@
 package org.helgoboss.scala_logging
 
 /**
- * Provides a common interface for logging in Scala. Uses Scala's "call by name" possibility so you don't have to
- * check whether the desired log level is enabled or not. Implementations should make sure that the arguments
- * are evaluated only if the corresponding log level is enabled.
+ * Provides a common interface for logging in Scala.
  *
- * Implementations must handle the methods taking no exception the same like the methods taking one if null is passed
- * for the exception.
+ * Makes use of Scala's Call-by-Name parameters so you don't have to check whether the desired log level is enabled
+ * or not.
+ *
+ * Implementations should make sure that the arguments are evaluated only if the corresponding log level
+ * is enabled. Additionatlly, they should handle the two-parameter methods like the single-parameter methods
+ * if `null` is passed as the exception parameter.
  */
 trait Logger {
   /**

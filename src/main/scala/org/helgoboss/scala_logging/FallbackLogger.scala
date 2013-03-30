@@ -1,9 +1,14 @@
 package org.helgoboss.scala_logging
 
 /**
- * Logger decorator which loggers to a fallback logger if the first one is not available.
+ * Logger decorator which logs to a secondary logger if the primary logger is not available.
+ *
+ * @constructor Creates the fallback logger.
+ * @param primaryLogger Call-by-Name parameter which returns the primary logger if available and is evaluated
+ *                      at every call to `log`. If it returns `None`, the secondary logger is used.
+ * @param secondaryLogger The logger which is used if the primary logger is not available
  */
-class FallbackLogger(primaryLogger: => Option[Logger], fallbackLogger: Logger) extends Logger {
+class FallbackLogger(primaryLogger: => Option[Logger], secondaryLogger: Logger) extends Logger {
     def debug(message: => AnyRef) {
         log(_.debug(message))
     }
@@ -43,16 +48,14 @@ class FallbackLogger(primaryLogger: => Option[Logger], fallbackLogger: Logger) e
     def trace(message: => AnyRef, exception: => Throwable) {
         log(_.trace(message, exception))
     }
-    
-    
-    
+
     private def log(method: Logger => Unit) {
         primaryLogger match {
             case Some(l) => 
                 method(l)
                 
             case None => 
-                method(fallbackLogger)
+                method(secondaryLogger)
         }
     }
 }

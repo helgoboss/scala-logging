@@ -26,7 +26,10 @@ package org.helgoboss.scala_logging
 import java.util.logging.{Level => JLevel, Logger => JLogger}
 
 /**
- * Implementation of Logger using the "java.util.logging" facility.
+ * [[Logger]] Implementation using the logging facility integrated into the JDK.
+ *
+ * @constructor Creates the Scala logger based on the given JUL logger.
+ * @param jLogger JUL logger
  */
 class JavaUtilLoggingLogger(jLogger: JLogger) extends Logger {
     def debug(message: => AnyRef) {
