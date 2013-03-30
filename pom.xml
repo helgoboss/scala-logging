@@ -14,7 +14,10 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Scala Logging</name>
-    <description>Simple Scala API for logging along with a Java Logging API implementation</description>
+    <description>
+        Simple Scala API for logging along with an implementation based on the
+        Java Logging API
+    </description>
     <url>https://github.com/helgoboss/scala-logging</url>
     <scm>
         <url>https://github.com/helgoboss/scala-logging</url>
