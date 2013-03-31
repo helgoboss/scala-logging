@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.helgoboss</groupId>
         <artifactId>my-scala-oss-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-        <relativePath></relativePath>
+        <version>1.0.0</version>
+        <relativePath />
     </parent>
     
     <groupId>org.helgoboss</groupId>
     <artifactId>scala-logging</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>bundle</packaging>
     <name>Scala Logging</name>
     <description>
