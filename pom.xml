@@ -11,7 +11,7 @@
     
     <groupId>org.helgoboss</groupId>
     <artifactId>scala-logging</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Scala Logging</name>
     <description>
